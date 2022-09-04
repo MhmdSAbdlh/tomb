@@ -1,0 +1,209 @@
+body{
+    background-color: #272727 ;
+}
+
+.title{
+    color: #272727;
+    font-weight: bolder;
+    font-size: 50px ;
+    background-color: #ffffff;
+    border-style: solid;
+    border-radius: 50px;
+    border-color: #6e6e6e;
+    border-width: 4px;
+    padding: 0.4% 1% 0.4% 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.separator{
+    margin: 2% 15% 2% 15%;
+    border-radius: 50px;
+    border-bottom: 7px solid #fffcfc;
+    display: block;
+}
+
+.sep2{
+    margin: 2% 33% 0% 33%;
+    border-radius: 50px;    
+    border-bottom: 5px solid #fffcfc;
+    display: block;
+}
+
+.rowDiv{
+    display:block;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    line-height: 50px;
+    text-align: center;
+    color: #161616;
+}
+
+.bottomDiv{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-between;
+}
+
+.intro{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; 
+    border-color:#ECDBBA;
+    width: fit-content;
+}
+
+.btns{
+    height: 45px;
+    width: 160px;
+    margin-bottom: 0.2%;
+    margin-right: 2%;
+    font-weight: bolder;
+    font-size: larger;
+    color: #000000;
+    background-color: #bbbbbb;
+    border-radius: 9px;
+    border-color:#ffffff;
+    border-width: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btns:hover{
+    box-shadow: 0px 0px 5px #161616;
+    color: #ECDBBA;
+    background-color: #161616;
+}
+
+.disabledBtn{
+    height: 45px;
+    width: 160px;
+    margin-bottom: 0.2%;
+    margin-right: 2%;
+    font-weight: bolder;
+    font-size: larger;
+    color: #ffffff;
+    background-color: #570707;
+    border-radius: 9px;
+    border-color:#ffffff;
+    border-width: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.disabledBtn:hover{
+    box-shadow: 0px 0px 5px #161616;
+}
+
+.btnsIntro{
+    height: 65px;
+    width: 240px;
+    font-weight: bolder;
+    font-size: 25px ;
+    color: #ECDBBA;
+    background-color: #161616;
+    border-radius: 8px;
+    border-color:#ECDBBA;
+    border-width: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btnsIntro:hover{
+    box-shadow: 0px 0px 5px #161616;
+    background-color: #666666;
+}
+
+.lowBtns{
+    height: 70px;
+    width: 300px;
+    margin-bottom: 0.2%;
+    margin-inline:10%;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #161616;
+    background-color: #ECDBBA;
+    border-radius: 4    px;
+    border-color:#161616;
+    border-width: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.lowBtns:hover{
+    box-shadow: 0px 0px 5px #ECDBBA;
+    background-color: #000000;
+    color: #6e6e6e;
+}
+
+.topBtns{
+    padding: 0.4% 0.6% 0.4% 0.6%;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #161616;
+    background-color: #ECDBBA;
+    border-style: solid;
+    border-radius: 1px;
+    border-color: #161616;
+    border-width: 2px;
+}
+
+.myProgress{
+    height: 10px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    background-color: #ffffff;
+    width: auto;
+    margin-right: 2.6%;
+    margin-left: 2.6%;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 33px;
+    border-color: #161616;
+}
+
+#myBar {
+    height: 10px;
+    background-color: #575757;
+}
+
+.sub-title{
+    color: #ECDBBA;
+    background-color: #161616;
+    padding: 0.4% 0.6% 0.4% 0.6%;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #ECDBBA;
+    border-width: 2px;
+    font-weight: bold;
+    font-size: 25px ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 2%;
+    cursor: default;
+}
+
+.imgRef{
+    text-decoration: none;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 350px;
+}
+
+.credit{
+    width: 100%;
+    color: #ECDBBA;
+    font-style: italic;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 2px 3px 5px #161616, 2px 3px 5px #161616;
+}
