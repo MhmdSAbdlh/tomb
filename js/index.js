@@ -23,6 +23,8 @@ function init(){
 		btn[i].appendChild(t);
 		btn[i].onclick = function(){
 			if(i == 3 || i == 8 || i == 24){
+				btn[i].style.backgroundColor = 'gold';
+				btn[i].style.color = 'black';
 				Swal.fire(
 					'عن روح '+btn[i].textContent,
 					'قراءة سورة التوحيد 3 مرات و القدر مرة .',
@@ -30,6 +32,8 @@ function init(){
 				  )
 			}
 			if(i == 5 || i == 15 || i == 20 || i == 34){
+				btn[i].style.backgroundColor = 'black';
+				btn[i].style.color = 'white';
 				Swal.fire(
 					'توسل ب'+ btn[i].textContent,
 					'يا شهيداً عند الله, إشفع لنا عند الله.',
@@ -37,6 +41,8 @@ function init(){
 				  )
 			}
 			if(i == 23){
+				btn[i].style.backgroundColor = 'gold';
+				btn[i].style.color = 'black';
 				Swal.fire(
 					'عن روح '+ btn[i].textContent,
 					'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
