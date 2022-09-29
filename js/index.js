@@ -5,7 +5,7 @@ init();
 function init(){
 	//Define the buttons
 	let sowar = ["مريم اسماعيل","عدنان قاسم","السيد محمد","بهية القزويني","مريم البغدادي"
-	,"الشهيد حيدر اسماعيل","مها الخطيب","أبو عمر","أبو عيسى",
+	,"الشهيد حيدر اسماعيل","مها الخطيب","أبو عمر","أبو عيسى","سلمى عبدالله",
 	"أبو محمد سلمان","أم محمد سلمان",
 	"أم عبدالله","السيد شريف","أبو أيمن","إم أيمن",
 	"الشهيد فداء ماضي",
@@ -22,7 +22,7 @@ function init(){
 		btn[i].className = "btns";
 		btn[i].appendChild(t);
 		btn[i].onclick = function(){
-			if(i == 3 || i == 8 || i == 24){
+			if(i == 3 || i == 8 || i == 25){
 				btn[i].style.backgroundColor = 'gold';
 				btn[i].style.color = 'black';
 				Swal.fire(
@@ -31,7 +31,7 @@ function init(){
 					'info'
 				  )
 			}
-			if(i == 5 || i == 15 || i == 20 || i == 34){
+			if(i == 5 || i == 16 || i == 21 || i == 35){
 				btn[i].style.backgroundColor = 'black';
 				btn[i].style.color = 'white';
 				Swal.fire(
@@ -40,7 +40,7 @@ function init(){
 					'info'
 				  )
 			}
-			if(i == 23){
+			if(i == 24){
 				btn[i].style.backgroundColor = 'gold';
 				btn[i].style.color = 'black';
 				Swal.fire(
@@ -52,10 +52,10 @@ function init(){
 			btn[i].className = "disabledBtn";
 			btn[i].disabled = true;
 			window.localStorage.setItem(localStorage.length+1,btn[i].innerHTML);
-			document.getElementById('leftS').innerText = "القبور المتبقية: " +(35-localStorage.length); 
+			document.getElementById('leftS').innerText = "القبور المتبقية: " +(36-localStorage.length); 
 			document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
 			document.getElementById('todayS').innerText = "الفاتحة عن روح: " +localStorage.getItem(localStorage.length);
-			progress.style.width = localStorage.length * 100 / 35 + "%";
+			progress.style.width = localStorage.length * 100 / 36 + "%";
 			endRead();
 		}
 	}
@@ -70,41 +70,43 @@ function init(){
 	document.getElementById('bodyDiv1').appendChild(btn[6]);
 	document.getElementById('bodyDiv1').appendChild(btn[7]);
 	document.getElementById('bodyDiv1').appendChild(btn[8]);
+	document.getElementById('bodyDiv1').appendChild(btn[9]);
 
-	document.getElementById('bodyDiv2').appendChild(btn[9]);
 	document.getElementById('bodyDiv2').appendChild(btn[10]);
+	document.getElementById('bodyDiv2').appendChild(btn[11]);
 
-	document.getElementById('bodyDiv3').appendChild(btn[11]);
 	document.getElementById('bodyDiv3').appendChild(btn[12]);
 	document.getElementById('bodyDiv3').appendChild(btn[13]);
 	document.getElementById('bodyDiv3').appendChild(btn[14]);
+	document.getElementById('bodyDiv3').appendChild(btn[15]);
 
-	document.getElementById('bodyDiv4').appendChild(btn[15]);
+	document.getElementById('bodyDiv4').appendChild(btn[16]);
 
-	document.getElementById('bodyDiv5').appendChild(btn[16]);
 	document.getElementById('bodyDiv5').appendChild(btn[17]);
 	document.getElementById('bodyDiv5').appendChild(btn[18]);
 	document.getElementById('bodyDiv5').appendChild(btn[19]);
-
-	document.getElementById('bodyDiv6').appendChild(btn[20]);
+	document.getElementById('bodyDiv5').appendChild(btn[20]);
 	
-	document.getElementById('bodyDiv7').appendChild(btn[21]);
-	document.getElementById('bodyDiv7').appendChild(btn[22]);
+	document.getElementById('bodyDiv6').appendChild(btn[21]);
 
-	document.getElementById('bodyDiv8').appendChild(btn[23]);
+	document.getElementById('bodyDiv7').appendChild(btn[22]);
+	document.getElementById('bodyDiv7').appendChild(btn[23]);
+
 	document.getElementById('bodyDiv8').appendChild(btn[24]);
 	document.getElementById('bodyDiv8').appendChild(btn[25]);
 	document.getElementById('bodyDiv8').appendChild(btn[26]);
 	document.getElementById('bodyDiv8').appendChild(btn[27]);
 	document.getElementById('bodyDiv8').appendChild(btn[28]);
+	document.getElementById('bodyDiv8').appendChild(btn[29]);
 
-	document.getElementById('bodyDiv9').appendChild(btn[29]);
 	document.getElementById('bodyDiv9').appendChild(btn[30]);
 	document.getElementById('bodyDiv9').appendChild(btn[31]);
 	document.getElementById('bodyDiv9').appendChild(btn[32]);
-	document.getElementById('bodyDiv9').appendChild(btn[33]);
 
-	document.getElementById('bodyDiv10').appendChild(btn[34]);
+	document.getElementById('bodyDiv9').appendChild(btn[33]);
+	document.getElementById('bodyDiv9').appendChild(btn[34]);
+
+	document.getElementById('bodyDiv10').appendChild(btn[35]);
 
 	//Import from local storage
 	for(let i=0; i<btn.length; i++){
@@ -112,12 +114,25 @@ function init(){
 			if(btn[i].innerHTML == window.localStorage.getItem(k)){
 				btn[i].className = "disabledBtn";
 				btn[i].disabled = true;
+				if(i == 3 || i == 8 || i == 25){
+					btn[i].style.backgroundColor = 'gold';
+					btn[i].style.color = 'black';
+				}
+				if(i == 5 || i == 16 || i == 21 || i == 35){
+					btn[i].style.backgroundColor = 'black';
+					btn[i].style.color = 'white';
+					  
+				}
+				if(i == 24){
+					btn[i].style.backgroundColor = 'gold';
+					btn[i].style.color = 'black';
+				}
 			}
 		}
 	}
-	progress.style.width = localStorage.length * 100 / 35 + "%";
+	progress.style.width = localStorage.length * 100 / 36 + "%";
 	document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
-	document.getElementById('leftS').innerText = "القبور المتبقية: "  +(35-localStorage.length);
+	document.getElementById('leftS').innerText = "القبور المتبقية: "  +(36-localStorage.length);
 	endRead();
 	if(localStorage.length==0){
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: غير محدد";
@@ -128,27 +143,33 @@ function init(){
 }
 
 function randomS(){
-	if(localStorage.length<35){
-		let index = Math.floor(Math.random()*35);
+	if(localStorage.length<36){
+		let index = Math.floor(Math.random()*36);
 		while(btn[index].disabled == true){
-			index = Math.floor(Math.random()*35);
+			index = Math.floor(Math.random()*36);
 		}
 		btn[index].className = "disabledBtn";
-		if(index == 3 || index == 8 || index == 24){
+		if(index == 3 || index == 8 || index == 25){
+			btn[index].style.backgroundColor = 'gold';
+			btn[index].style.color = 'black';
 			Swal.fire(
 				'عن روح '+btn[index].textContent,
 				'قراءة سورة التوحيد 3 مرات و القدر مرة .',
 				'info'
 			  )
 		}
-		if(index == 5 || index == 15 || index == 20 || index == 34){
+		if(index == 5 || index == 16 || index == 21 || index == 35){
+			btn[index].style.backgroundColor = 'black';
+			btn[index].style.color = 'white';
 			Swal.fire(
 				'توسل ب'+ btn[index].textContent,
 				'يا شهيداً عند الله, إشفع لنا عند الله.',
 				'info'
 			  )
 		}
-		if(index == 23){
+		if(index == 24){
+			btn[index].style.backgroundColor = 'gold';
+			btn[index].style.color = 'black';
 			Swal.fire(
 				'عن روح '+ btn[index].textContent,
 				'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
@@ -157,10 +178,10 @@ function randomS(){
 		}
 		btn[index].disabled = true;
 		window.localStorage.setItem(localStorage.length+1,btn[index].innerHTML);
-		document.getElementById('leftS').innerText = "القبور المتبقية: "  +(35-localStorage.length); 
+		document.getElementById('leftS').innerText = "القبور المتبقية: "  +(36-localStorage.length); 
 		document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: " +localStorage.getItem(localStorage.length);
-		progress.style.width = localStorage.length * 100 / 35 + "%";
+		progress.style.width = localStorage.length * 100 / 36 + "%";
 	}
 	endRead();
 }
@@ -169,12 +190,14 @@ function clearS(){
 	for(let i=0; i<btn.length; i++){
 		btn[i].className = "btns";
 		btn[i].disabled = false;
+		btn[i].style.backgroundColor = '';
+		btn[i].style.color = '';
 	}
 	localStorage.clear();
 	document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
-	document.getElementById('leftS').innerText = "القبور المتبقية: "+(35-localStorage.length); 
+	document.getElementById('leftS').innerText = "القبور المتبقية: "+(36-localStorage.length); 
 	document.getElementById('todayS').innerText = "الفاتحة عن روح: غير محدد";
-	progress.style.width = localStorage.length * 100 / 35 + "%";
+	progress.style.width = localStorage.length * 100 / 36 + "%";
 }
 
 function introF(){
@@ -191,14 +214,16 @@ function goBack(){
 			if(btn[i].innerHTML == localStorage.getItem(localStorage.length)){
 				btn[i].className = "btns";
 				btn[i].disabled = false;
+				btn[i].style.backgroundColor = '';
+				btn[i].style.color = '';
 				break;
 			}
 		}
 		localStorage.removeItem(localStorage.length);
 		document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
-		document.getElementById('leftS').innerText = "القبور المتبقية: "+(35-localStorage.length); 
+		document.getElementById('leftS').innerText = "القبور المتبقية: "+(36-localStorage.length); 
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: "+localStorage.getItem(localStorage.length);
-		progress.style.width = localStorage.length * 100 / 35 + "%";
+		progress.style.width = localStorage.length * 100 / 36 + "%";
 		if(localStorage.length==0){
 			document.getElementById('todayS').innerText = "الفاتحة عن روح: غير محدد";
 		}
@@ -209,7 +234,7 @@ function goBack(){
 }
 
 function endRead(){
-	if(localStorage.length == 35){
+	if(localStorage.length == 36){
 		Swal.fire({
 			title: 'أجرك الله!',
 			text: "تمت زيارة القبور",
