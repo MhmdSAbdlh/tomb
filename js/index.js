@@ -9,8 +9,7 @@ function init(){
 	"أبو محمد سلمان","أم محمد سلمان",
 	"أم عبدالله","السيد شريف","أبو أيمن","إم أيمن",
 	"الشهيد فداء ماضي",
-	"إم حسن","أبو حسن","إم علي","أبو عاطف",
-	"الشهيد حسين",
+	"إم حسن","أبو حسن","إم علي","أبو عاطف", "الشهيد حسين",
 	"إم عبدالله","أبو عبدالله",
 	"الشهيد خالد","حسين عدنان","أمينة عبدالله","زينب سلام","فياض عبدالله","أبو طلال",
 	"المختار","المختارة","نوال يوسف","الحج عدنان","أبو بلال",
@@ -82,22 +81,21 @@ function init(){
 
 	document.getElementById('bodyDiv4').appendChild(btn[16]);
 
+	document.getElementById('bodyDiv5').appendChild(btn[21]);
 	document.getElementById('bodyDiv5').appendChild(btn[17]);
 	document.getElementById('bodyDiv5').appendChild(btn[18]);
 	document.getElementById('bodyDiv5').appendChild(btn[19]);
 	document.getElementById('bodyDiv5').appendChild(btn[20]);
-	
-	document.getElementById('bodyDiv6').appendChild(btn[21]);
 
-	document.getElementById('bodyDiv7').appendChild(btn[22]);
-	document.getElementById('bodyDiv7').appendChild(btn[23]);
+	document.getElementById('bodyDiv6').appendChild(btn[22]);
+	document.getElementById('bodyDiv6').appendChild(btn[23]);
+	document.getElementById('bodyDiv6').appendChild(btn[29]);
 
-	document.getElementById('bodyDiv8').appendChild(btn[24]);
-	document.getElementById('bodyDiv8').appendChild(btn[25]);
-	document.getElementById('bodyDiv8').appendChild(btn[26]);
-	document.getElementById('bodyDiv8').appendChild(btn[27]);
-	document.getElementById('bodyDiv8').appendChild(btn[28]);
-	document.getElementById('bodyDiv8').appendChild(btn[29]);
+	document.getElementById('bodyDiv7').appendChild(btn[24]);
+	document.getElementById('bodyDiv7').appendChild(btn[25]);
+	document.getElementById('bodyDiv7').appendChild(btn[26]);
+	document.getElementById('bodyDiv7').appendChild(btn[27]);
+	document.getElementById('bodyDiv7').appendChild(btn[28]);
 
 	document.getElementById('bodyDiv9').appendChild(btn[30]);
 	document.getElementById('bodyDiv9').appendChild(btn[31]);
