@@ -21,33 +21,7 @@ function init(){
 		btn[i].className = "btns";
 		btn[i].appendChild(t);
 		btn[i].onclick = function(){
-			if(i == 3 || i == 8 || i == 25){
-				btn[i].style.backgroundColor = 'gold';
-				btn[i].style.color = 'black';
-				Swal.fire(
-					'عن روح '+btn[i].textContent,
-					'قراءة سورة التوحيد 3 مرات و القدر مرة .',
-					'info'
-				  )
-			}
-			if(i == 5 || i == 16 || i == 21 || i == 35){
-				btn[i].style.backgroundColor = 'black';
-				btn[i].style.color = 'white';
-				Swal.fire(
-					'توسل ب'+ btn[i].textContent,
-					'يا شهيداً عند الله, إشفع لنا عند الله.',
-					'info'
-				  )
-			}
-			if(i == 24){
-				btn[i].style.backgroundColor = 'gold';
-				btn[i].style.color = 'black';
-				Swal.fire(
-					'عن روح '+ btn[i].textContent,
-					'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
-					'info'
-				  )
-			}
+			specialF(i);
 			btn[i].className = "disabledBtn";
 			btn[i].disabled = true;
 			window.localStorage.setItem(localStorage.length+1,btn[i].innerHTML);
@@ -119,7 +93,6 @@ function init(){
 				if(i == 5 || i == 16 || i == 21 || i == 35){
 					btn[i].style.backgroundColor = 'black';
 					btn[i].style.color = 'white';
-					  
 				}
 				if(i == 24){
 					btn[i].style.backgroundColor = 'gold';
@@ -128,6 +101,7 @@ function init(){
 			}
 		}
 	}
+
 	progress.style.width = localStorage.length * 100 / 36 + "%";
 	document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
 	document.getElementById('leftS').innerText = "القبور المتبقية: "  +(36-localStorage.length);
@@ -141,39 +115,14 @@ function init(){
 }
 
 function randomS(){
+	let index = Math.floor(Math.random()*36);
+	while(btn[index].disabled == true){
+		index = Math.floor(Math.random()*36);
+	}
+	specialF(index);
 	if(localStorage.length<36){
-		let index = Math.floor(Math.random()*36);
-		while(btn[index].disabled == true){
-			index = Math.floor(Math.random()*36);
-		}
 		btn[index].className = "disabledBtn";
-		if(index == 3 || index == 8 || index == 25){
-			btn[index].style.backgroundColor = 'gold';
-			btn[index].style.color = 'black';
-			Swal.fire(
-				'عن روح '+btn[index].textContent,
-				'قراءة سورة التوحيد 3 مرات و القدر مرة .',
-				'info'
-			  )
-		}
-		if(index == 5 || index == 16 || index == 21 || index == 35){
-			btn[index].style.backgroundColor = 'black';
-			btn[index].style.color = 'white';
-			Swal.fire(
-				'توسل ب'+ btn[index].textContent,
-				'يا شهيداً عند الله, إشفع لنا عند الله.',
-				'info'
-			  )
-		}
-		if(index == 24){
-			btn[index].style.backgroundColor = 'gold';
-			btn[index].style.color = 'black';
-			Swal.fire(
-				'عن روح '+ btn[index].textContent,
-				'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
-				'info'
-			  )
-		}
+		
 		btn[index].disabled = true;
 		window.localStorage.setItem(localStorage.length+1,btn[index].innerHTML);
 		document.getElementById('leftS').innerText = "القبور المتبقية: "  +(36-localStorage.length); 
@@ -182,6 +131,45 @@ function randomS(){
 		progress.style.width = localStorage.length * 100 / 36 + "%";
 	}
 	endRead();
+}
+
+function specialF(index){
+	if(index == 3 || index == 8 || index == 25){
+		btn[index].style.backgroundColor = 'gold';
+		btn[index].style.color = 'black';
+		Swal.fire(
+			'عن روح '+btn[index].textContent,
+			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+			'info'
+		  ).then(function() {
+			if(localStorage.length == 36)
+				prayFinal();
+		})
+	}
+	if(index == 5 || index == 16 || index == 21 || index == 35){
+		btn[index].style.backgroundColor = 'black';
+		btn[index].style.color = 'white';
+		Swal.fire(
+			'توسل ب'+ btn[index].textContent,
+			'يا شهيداً عند الله, إشفع لنا عند الله.',
+			'info'
+		  ).then(function() {
+			if(localStorage.length == 36)
+				prayFinal();
+		})
+	}
+	if(index == 24){
+		btn[index].style.backgroundColor = 'gold';
+		btn[index].style.color = 'black';
+		Swal.fire(
+			'عن روح '+ btn[index].textContent,
+			'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
+			'info'
+		  ).then(function() {
+			if(localStorage.length == 36)
+				prayFinal();
+		})
+	}
 }
 
 function clearS(){
@@ -231,8 +219,46 @@ function goBack(){
 	}
 }
 
+function getValue(){
+	switch (localStorage.getItem(36)) {
+		case btn[3].innerHTML:
+			return 3;
+		case btn[5].innerHTML:
+			return 5;
+		case btn[8].innerHTML:
+			return 8;
+		case btn[16].innerHTML:
+			return 16;
+			case btn[21].innerHTML:
+				return 21;
+			case btn[24].innerHTML:
+				return 24;
+				case btn[25].innerHTML:
+					return 25;
+				case btn[35].innerHTML:
+					return 35;
+				
+		default:
+		  console.log(`Sorry, we are out of ${expr}.`);
+	  }
+
+}
+
 function endRead(){
 	if(localStorage.length == 36){
+			if(localStorage.getItem(36) == btn[3].innerHTML || 
+			localStorage.getItem(36) == btn[8].innerHTML || localStorage.getItem(36) == btn[25].innerHTML ||
+			localStorage.getItem(36) == btn[5].innerHTML || localStorage.getItem(36) == btn[16].innerHTML  || 
+			localStorage.getItem(36) == btn[21].innerHTML || localStorage.getItem(36) == btn[35].innerHTML ||
+			localStorage.getItem(36) == btn[24].innerHTML){
+			specialF(getValue());
+	}
+	else
+	prayFinal();
+	}
+}
+
+	function prayFinal(){
 		Swal.fire({
 			title: 'أجرك الله!',
 			text: "تمت زيارة القبور",
@@ -240,7 +266,7 @@ function endRead(){
 			showCancelButton: true,
 			confirmButtonColor: '#346751',
 			cancelButtonColor: '#161616',
-			confirmButtonText: `مستحبات أخرى`,
+			confirmButtonText: 'دعاء ختم القرآن',
 			cancelButtonText: 'مسح كل شيء',
 		  }).then((result) => {
 			if (result.isConfirmed){
@@ -260,4 +286,4 @@ function endRead(){
 				clearS();
 			  }
 		  });
-	}}
+	}
