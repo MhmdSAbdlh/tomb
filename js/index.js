@@ -7,7 +7,7 @@ function init(){
 	let sowar = ["مريم اسماعيل","عدنان قاسم","السيد محمد","بهية القزويني","مريم البغدادي"
 	,"الشهيد حيدر اسماعيل","مها الخطيب","أبو عمر","أبو عيسى","سلمى عبدالله",
 	"أبو محمد سلمان","أم محمد سلمان",
-	"أم عبدالله","السيد شريف","أبو أيمن","إم أيمن",
+	"أم عبدالله خديجة","السيد شريف","أبو أيمن","إم أيمن",
 	"الشهيد فداء ماضي",
 	"إم حسن","أبو حسن","إم علي","أبو عاطف", "الشهيد حسين",
 	"إم عبدالله","أبو عبدالله",
@@ -246,16 +246,22 @@ function getValue(){
 
 function endRead(){
 	if(localStorage.length == 36){
-			if(localStorage.getItem(36) == btn[3].innerHTML || 
-			localStorage.getItem(36) == btn[8].innerHTML || localStorage.getItem(36) == btn[25].innerHTML ||
-			localStorage.getItem(36) == btn[5].innerHTML || localStorage.getItem(36) == btn[16].innerHTML  || 
-			localStorage.getItem(36) == btn[21].innerHTML || localStorage.getItem(36) == btn[35].innerHTML ||
-			localStorage.getItem(36) == btn[24].innerHTML){
+			if(localStorage.getItem(36) == btn[3].innerHTML || //Tata
+			localStorage.getItem(36) == btn[8].innerHTML || //Bo Issa
+			localStorage.getItem(36) == btn[25].innerHTML || //Shahid khaled
+			localStorage.getItem(36) == btn[24].innerHTML){ //Hsein Adnen
 			specialF(getValue());
 	}
-	else
-	prayFinal();
+else{
+		Swal.fire(
+			'عن روح '+localStorage.getItem(36),
+			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+			'info'
+		  ).then(function() {
+		prayFinal();
+		  })
 	}
+}
 }
 
 	function prayFinal(){
