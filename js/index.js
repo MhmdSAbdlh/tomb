@@ -245,23 +245,85 @@ function getValue(){
 }
 
 function endRead(){
-	if(localStorage.length == 36){
+	if(localStorage.length == 36){ //the last one is special
 			if(localStorage.getItem(36) == btn[3].innerHTML || //Tata
 			localStorage.getItem(36) == btn[8].innerHTML || //Bo Issa
 			localStorage.getItem(36) == btn[25].innerHTML || //Shahid khaled
 			localStorage.getItem(36) == btn[24].innerHTML){ //Hsein Adnen
 			specialF(getValue());
 	}
-else{
+	else{ //the last one is not special
 		Swal.fire(
 			'عن روح '+localStorage.getItem(36),
 			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
 			'info'
 		  ).then(function() {
-		prayFinal();
-		  })
+			prayFinal();
+			  })
 	}
 }
+else{
+	if(localStorage.length == 35 && //before the last one is not special and the last is
+		localStorage.getItem(35) != btn[3].innerHTML && 
+		localStorage.getItem(35) != btn[8].innerHTML && 
+		localStorage.getItem(35) != btn[25].innerHTML &&
+		localStorage.getItem(35) != btn[24].innerHTM && 
+		(!btn[3].disabled||
+		!btn[8].disabled ||
+		!btn[24].disabled ||
+		!btn[25].disabled))
+		Swal.fire(
+			'عن روح '+localStorage.getItem(35),
+			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+			'info'
+		  )
+		  else
+		  if(localStorage.length == 34 && //two before the last is not special and the last two is
+			localStorage.getItem(34) != btn[3].innerHTML && 
+			localStorage.getItem(34) != btn[8].innerHTML && 
+			localStorage.getItem(34) != btn[25].innerHTML &&
+			localStorage.getItem(34) != btn[24].innerHTM && 
+			((!btn[3].disabled && !btn[8].disabled)||
+			(!btn[3].disabled && !btn[24].disabled)||
+			(!btn[3].disabled && !btn[25].disabled)||
+			(!btn[8].disabled && !btn[24].disabled)||
+			(!btn[8].disabled && !btn[25].disabled)||
+			(!btn[24].disabled && !btn[25].disabled)
+			))
+			Swal.fire(
+				'عن روح '+localStorage.getItem(34),
+				'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+				'info'
+			  )
+			  else 
+			  if(localStorage.length == 33 && //3 before the last is not special and the last 3 is
+				localStorage.getItem(33) != btn[3].innerHTML &&
+				localStorage.getItem(33) != btn[8].innerHTML &&
+				localStorage.getItem(33) != btn[25].innerHTML &&
+				localStorage.getItem(33) != btn[24].innerHTM &&
+				((!btn[3].disabled && !btn[8].disabled && !btn[24].disabled)||
+				(!btn[3].disabled && !btn[8].disabled && !btn[25].disabled)||
+				(!btn[3].disabled && !btn[24].disabled && !btn[25].disabled)||
+				(!btn[24].disabled && !btn[25].disabled && !btn[8].disabled)
+				))
+				Swal.fire(
+					'عن روح '+localStorage.getItem(33),
+					'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+					'info'
+				  )
+				  else
+				  if(localStorage.length == 32 && //before the last 4 is not special and the last 4 is
+					localStorage.getItem(32) != btn[3].innerHTML &&
+					localStorage.getItem(32) != btn[8].innerHTML &&
+					localStorage.getItem(32) != btn[25].innerHTML &&
+					localStorage.getItem(32) != btn[24].innerHTM &&
+					!btn[3].disabled && !btn[8].disabled && !btn[24].disabled && !btn[25].disabled )
+					Swal.fire(
+						'عن روح '+localStorage.getItem(32),
+						'قراءة سورة التوحيد 3 مرات و القدر مرة .',
+						'info'
+					  )
+	}
 }
 
 	function prayFinal(){
