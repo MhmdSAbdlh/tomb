@@ -122,13 +122,26 @@ function randomS(){
 	specialF(index);
 	if(localStorage.length<36){
 		btn[index].className = "disabledBtn";
-		
 		btn[index].disabled = true;
 		window.localStorage.setItem(localStorage.length+1,btn[index].innerHTML);
 		document.getElementById('leftS').innerText = "القبور المتبقية: "  +(36-localStorage.length); 
 		document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: " +localStorage.getItem(localStorage.length);
 		progress.style.width = localStorage.length * 100 / 36 + "%";
+		if(index != 3 && index != 5 && index != 8 && index !=16  && index !=21  && index != 24 && index != 25 && index != 35)
+		Swal.fire({
+			position: 'bottom',
+			toast: false,
+			width: 250,
+			timerProgressBar: true,
+			title: btn[index].textContent,
+			showConfirmButton: false,
+			timer: 1000,
+			didOpen: (toast) => {
+				toast.addEventListener('mouseenter', Swal.stopTimer)
+				toast.addEventListener('mouseleave', Swal.resumeTimer)
+			  }
+		  })
 	}
 	endRead();
 }
@@ -222,7 +235,7 @@ function goBack(){
 function getValue(){
 	switch (localStorage.getItem(36)) {
 		case btn[3].innerHTML:
-			return 3;
+			ret
 		case btn[5].innerHTML:
 			return 5;
 		case btn[8].innerHTML:
