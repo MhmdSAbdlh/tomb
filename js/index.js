@@ -136,7 +136,7 @@ function randomS(){
 			timerProgressBar: true,
 			title: btn[index].textContent,
 			showConfirmButton: false,
-			timer: 1000,
+			timer: 10000,
 			didOpen: (toast) => {
 				toast.addEventListener('mouseenter', Swal.stopTimer)
 				toast.addEventListener('mouseleave', Swal.resumeTimer)
