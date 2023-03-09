@@ -1,5 +1,6 @@
 var btn = new Array();
 var progress = document.getElementById("myBar");
+var temp =0;
 init();
 
 function init(){
@@ -114,6 +115,20 @@ function init(){
 	}
 }
 
+	
+document.addEventListener('DOMContentLoaded', function () {
+	var checkbox = document.querySelector('input[type="checkbox"]');
+  
+	checkbox.addEventListener('change', function () {
+	  if (checkbox.checked) {
+		temp = 1;
+	  } else {
+		temp =0;
+	  }
+	});
+  });
+
+
 function randomS(){
 	let index = Math.floor(Math.random()*36);
 	while(btn[index].disabled == true){
@@ -129,6 +144,7 @@ function randomS(){
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: " +localStorage.getItem(localStorage.length);
 		progress.style.width = localStorage.length * 100 / 36 + "%";
 		if(index != 3 && index != 5 && index != 8 && index !=16  && index !=21  && index != 24 && index != 25 && index != 35)
+		if(temp==1)
 		Swal.fire({
 			position: 'bottom',
 			toast: false,
@@ -136,7 +152,7 @@ function randomS(){
 			timerProgressBar: true,
 			title: btn[index].textContent,
 			showConfirmButton: false,
-			timer: 10000,
+			timer: 14500,
 			didOpen: (toast) => {
 				toast.addEventListener('mouseenter', Swal.stopTimer)
 				toast.addEventListener('mouseleave', Swal.resumeTimer)
