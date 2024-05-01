@@ -87,17 +87,13 @@ function init(){
 			if(btn[i].innerHTML == window.localStorage.getItem(k)){
 				btn[i].className = "disabledBtn";
 				btn[i].disabled = true;
-				if(i == 3 || i == 8 || i == 25){
+				if(i == 3 || i == 8 || i == 24 || i == 25){
 					btn[i].style.backgroundColor = 'gold';
 					btn[i].style.color = 'black';
 				}
-				if(i == 5 || i == 16 || i == 21 || i == 35){
+				else if(i == 5 || i == 16 || i == 21 || i == 35){
 					btn[i].style.backgroundColor = 'black';
 					btn[i].style.color = 'white';
-				}
-				if(i == 24){
-					btn[i].style.backgroundColor = 'gold';
-					btn[i].style.color = 'black';
 				}
 			}
 		}
@@ -115,7 +111,7 @@ function init(){
 	}
 }
 
-	
+//For the timer	
 document.addEventListener('DOMContentLoaded', function () {
 	var checkbox = document.querySelector('input[type="checkbox"]');
   
@@ -128,10 +124,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
   });
 
-
+//Select random vaLUE
 function randomS(){
 	let index = Math.floor(Math.random()*36);
-	while(btn[index].disabled == true){
+	while(btn[index].disabled == true){//CHECK IF THE RANDOM VALUE ALREADY EXIST
 		index = Math.floor(Math.random()*36);
 	}
 	specialF(index);
@@ -143,8 +139,7 @@ function randomS(){
 		document.getElementById('doneS').innerText = "القبور المنجزة: "+localStorage.length;
 		document.getElementById('todayS').innerText = "الفاتحة عن روح: " +localStorage.getItem(localStorage.length);
 		progress.style.width = localStorage.length * 100 / 36 + "%";
-		if(index != 3 && index != 5 && index != 8 && index !=16  && index !=21  && index != 24 && index != 25 && index != 35)
-		if(temp==1)
+		if((index != 3 && index != 5 && index != 8 && index !=16  && index !=21  && index != 24 && index != 25 && index != 35) && temp ==1 )//special case
 		Swal.fire({
 			position: 'bottom',
 			toast: false,
@@ -162,42 +157,33 @@ function randomS(){
 	endRead();
 }
 
-function specialF(index){
-	if(index == 3 || index == 8 || index == 25){
+function specialF(index){//if the name is special
+	if(index == 3 || index == 8 || index == 25){//special for me
 		btn[index].style.backgroundColor = 'gold';
 		btn[index].style.color = 'black';
 		Swal.fire(
 			'عن روح '+btn[index].textContent,
 			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
 			'info'
-		  ).then(function() {
-			if(localStorage.length == 36)
-				prayFinal();
-		})
+		  )
 	}
-	if(index == 5 || index == 16 || index == 21 || index == 35){
+	else if(index == 5 || index == 16 || index == 21 || index == 35){// shahid
 		btn[index].style.backgroundColor = 'black';
 		btn[index].style.color = 'white';
 		Swal.fire(
 			'توسل ب'+ btn[index].textContent,
 			'يا شهيداً عند الله, إشفع لنا عند الله.',
 			'info'
-		  ).then(function() {
-			if(localStorage.length == 36)
-				prayFinal();
-		})
+		  )
 	}
-	if(index == 24){
+	else if(index == 24){//special+shhaid
 		btn[index].style.backgroundColor = 'gold';
 		btn[index].style.color = 'black';
 		Swal.fire(
 			'عن روح '+ btn[index].textContent,
 			'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
 			'info'
-		  ).then(function() {
-			if(localStorage.length == 36)
-				prayFinal();
-		})
+		  )
 	}
 }
 
@@ -251,7 +237,7 @@ function goBack(){
 function getValue(){
 	switch (localStorage.getItem(36)) {
 		case btn[3].innerHTML:
-			ret
+			return 3;
 		case btn[5].innerHTML:
 			return 5;
 		case btn[8].innerHTML:
@@ -274,14 +260,17 @@ function getValue(){
 }
 
 function endRead(){
-	if(localStorage.length == 36){ //the last one is special
-			if(localStorage.getItem(36) == btn[3].innerHTML || //Tata
-			localStorage.getItem(36) == btn[8].innerHTML || //Bo Issa
-			localStorage.getItem(36) == btn[25].innerHTML || //Shahid khaled
-			localStorage.getItem(36) == btn[24].innerHTML){ //Hsein Adnen
-			specialF(getValue());
-	}
-	else{ //the last one is not special
+	if(localStorage.length == 36){ //the last one is special	
+		if(localStorage.getItem(36) == btn[24].innerHTML || localStorage.getItem(36) == btn[5].innerHTML || localStorage.getItem(36) == btn[16].innerHTML 
+		|| localStorage.getItem(36) == btn[21].innerHTML || localStorage.getItem(36) == btn[35].innerHTML)//special+shhaid
+			Swal.fire(
+				'عن روح '+localStorage.getItem(36),
+				'قراءة سورة التوحيد 3 مرات و القدر مرة ,يا شهيداً عند الله, إشفع لنا عند الله.',
+				'info'
+			  ).then(function() {
+				prayFinal();
+				  })
+		else
 		Swal.fire(
 			'عن روح '+localStorage.getItem(36),
 			'قراءة سورة التوحيد 3 مرات و القدر مرة .',
@@ -289,7 +278,6 @@ function endRead(){
 		  ).then(function() {
 			prayFinal();
 			  })
-	}
 }
 else{
 	if(localStorage.length == 35 && //before the last one is not special and the last is
@@ -355,7 +343,7 @@ else{
 	}
 }
 
-	function prayFinal(){
+function prayFinal(){
 		Swal.fire({
 			title: 'أجرك الله!',
 			text: "تمت زيارة القبور",
