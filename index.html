@@ -17,9 +17,11 @@
     <div class="bottomDiv">
         <label class="title">زيارة آهل القبور</label>
     </div>
-
-    <div class="bottomDiv">
-           <img class="centered" src="img/img.png" alt="foo" />
+    
+    <!-- Separator -->
+    <div class="separator"></div>
+    <div  class="image-container">
+           <img  src="img/intro.jpg" alt="foo" />
      </div>
 
     
@@ -44,35 +46,42 @@
         <label id="todayS" class="topBtns"> القبر الحالي: غير محدد</label>
         <label id="leftS" class="topBtns">القبور المتبقية: 62</label>    
     </div> 
+    
 
     <!--ProgressBar and Table-->
-    <div class="rowDiv" id="bodyDiv0">
-        <div class="myProgress">
+    <div><br>
+        <div class="myProgress" id="progressBarWrapper">
             <div id="myBar"></div>
-          </div>
+        </div>
     </div>
-    <div class="rowDiv" id="bodyDiv1"><br>
+    
+    <div class="rowDiv" id="bodyDiv0">
     </div>
-    <div class="rowDiv" id="bodyDiv2"><br>
+    <div class="rowDiv" id="bodyDiv1">
     </div>
-    <div class="rowDiv" id="bodyDiv3"><br>
+    <div class="rowDiv" id="bodyDiv2">
     </div>
-    <div class="rowDiv" id="bodyDiv4"><br>
+    <div class="rowDiv" id="bodyDiv3">
     </div>
-    <div class="rowDiv" id="bodyDiv5"><br>
+    <div class="rowDiv" id="bodyDiv4">
     </div>
-    <div class="rowDiv" id="bodyDiv6"><br>
+    <div class="rowDiv" id="bodyDiv5">
     </div>
-    <div class="rowDiv" id="bodyDiv7"><br>
+    <div class="rowDiv" id="bodyDiv6">
     </div>
-    <div class="rowDiv" id="bodyDiv8">  
+    <div class="rowDiv" id="bodyDiv7">
     </div>
-    <div class="rowDiv" id="bodyDiv9"><br>
+    <div class="rowDiv" id="bodyDiv8">
     </div>
-    <div class="rowDiv" id="bodyDiv10"><br>
+    <div class="rowDiv" id="bodyDiv9">
+    </div>
+    <div class="rowDiv" id="bodyDiv10">
     </div>
 
     <!--Bottom Row-->
+    
+    <!-- Separator -->
+    <div class="sep2"></div><br>
 
     <div class="bottomDiv">
         <button class="lowBtns" onclick=goBack()>تراجع</button> 
@@ -88,7 +97,7 @@
     
      <div class="intro">
         <label class="switch">
-             <input type="checkbox">
+             <input type="checkbox" checked>
              <div class="slider round"></div>
         </label>
     </div>
@@ -101,11 +110,12 @@
     <div class="sub-title">حمل التطبيق</div>
 
     <div class="rowDiv">
-        <a class="imgRef" href="img/soon.png" target="_blank">
+        
+        <a class="imgRef" onclick=soonF()>
             <img src="img/playstore.png">
         </a>
     
-        <a class="imgRef" href="img/soon.png" target="_blank">
+        <a class="imgRef" onclick=soonF()>
             <img src="img/windows.png">
         </a>
     

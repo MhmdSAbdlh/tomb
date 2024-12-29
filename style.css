@@ -5,14 +5,14 @@ body{
 .title{
     color: #272727;
     font-weight: bolder;
-    font-size: 50px ;
+    font-size: 2vw;
     background-color: #ffffff;
     border-style: solid;
     border-radius: 50px;
     border-color: #6e6e6e;
     border-width: 4px;
-    padding: 0.4% 1% 0.4% 1%;
-    display: block;
+    padding: 1% 2% 1% 2%;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -60,16 +60,16 @@ body{
 }
 
 .btns{
-    height: 45px;
-    width: 160px;
-    margin-bottom: 0.2%;
-    margin-right: 2%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    padding: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: larger;
+    font-size: 2vw;
     color: #000000;
     background-color: #bbbbbb;
-    border-radius: 9px;
-    border-color:#ffffff;
+    border-radius: 8px;
+    border-style: solid;
+    border-color:#000000;
     border-width: 2px;
     transition: all 0.3s ease-in-out;
 }
@@ -78,19 +78,22 @@ body{
     box-shadow: 0px 0px 5px #161616;
     color: #ECDBBA;
     background-color: #161616;
+    border-radius: 5px;
+    border-color:#ECDBBA;
+    border-width: 2px;
 }
 
 .disabledBtn{
-    height: 45px;
-    width: 160px;
-    margin-bottom: 0.2%;
-    margin-right: 2%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    padding: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: larger;
+    font-size: 2vw;
     color: #ffffff;
     background-color: #570707;
-    border-radius: 9px;
-    border-color:#ffffff;
+    border-radius: 5px;
+    border-style: solid;
+    border-color:#e41717;
     border-width: 2px;
     transition: all 0.3s ease-in-out;
 }
@@ -100,10 +103,9 @@ body{
 }
 
 .btnsIntro{
-    height: 65px;
-    width: 240px;
+  padding: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: 25px ;
+    font-size: 2vw;
     color: #ECDBBA;
     background-color: #161616;
     border-radius: 8px;
@@ -118,15 +120,14 @@ body{
 }
 
 .lowBtns{
-    height: 70px;
-    width: 300px;
-    padding: 0.4% 0.6% 0.4% 0.6%;
+  padding: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 2vw;
     color: #161616;
     background-color: #ECDBBA;
-    border-radius: 4    px;
-    border-color:#161616;
+    border-radius: 8px;
+    border-style: solid;
+    border-color:#000000;
     border-width: 2px;
     transition: all 0.3s ease-in-out;
 }
@@ -138,46 +139,55 @@ body{
 }
 
 .topBtns{
-    padding: 0.4% 0.6% 0.4% 0.6%;
+  padding: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 2vw;
     color: #161616;
     background-color: #ECDBBA;
     border-style: solid;
-    border-radius: 1px;
+    border-radius: 5px;
     border-color: #161616;
     border-width: 2px;
 }
 
 .myProgress{
-    height: 10px;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    background-color: #ffffff;
-    width: auto;
-    margin-right: 2.6%;
-    margin-left: 2.6%;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 33px;
-    border-color: #161616;
+  position: relative;
+  height: 15px;
+  margin: 10px 10% 5% 0;
+  background-color: #ffffff;
+  width: 80%;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #161616;
 }
 
 #myBar {
-    height: 10px;
-    background-color: #575757;
+  height: 100%;
+  width: 0%;
+  border-radius: 1px;
+  background-color: #575757;
 }
+
+    /* Make the progress bar stick to the top when you scroll */
+  .fixed-progress {
+      position: fixed;
+      top: 0%;
+      left: 10%;
+      width: 80%;
+      z-index: 10; /* Ensure the progress bar is above other content */
+    }
 
 .sub-title{
     color: #ECDBBA;
     background-color: #161616;
-    padding: 0.4% 0.6% 0.4% 0.6%;
+    padding: 1% 2% 1% 2%;
     border-style: solid;
     border-radius: 8px;
     border-color: #ECDBBA;
     border-width: 2px;
     font-weight: bold;
-    font-size: 25px ;
+    font-size: 2vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -202,7 +212,7 @@ body{
     width: 100%;
     color: #ECDBBA;
     font-style: italic;
-    font-size: 16px;
+    font-size: 2vw;
     text-align: center;
     text-shadow: 2px 3px 5px #161616, 2px 3px 5px #161616;
 }
@@ -304,3 +314,45 @@ body{
   .slider.round:before {
     border-radius: 50%;
   }
+  .image-container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100%; /* Adjust as needed */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensures the image is responsive */
+    max-height: 100%; /* Ensures the image fits within the container */
+  }
+      /* Styling similar to SweetAlert buttons */
+      .swal-custom-btn {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3085d6; /* SweetAlert blue color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+  
+      .swal-custom-btn:hover {
+        background-color: #2874c5; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+      }
+  
+      .swal-custom-btn:active {
+        background-color: #2069b4; /* Even darker blue on click */
+        transform: translateY(0); /* Reset lift effect */
+      }
+  
+      .swal-custom-btn:disabled,
+      .swal-custom-btn.disabled {
+        background-color: #ccc; /* Gray for disabled state */
+        cursor: not-allowed;
+        box-shadow: none;
+      }
